@@ -15,6 +15,9 @@ function draw()
   {
     fill(255,0 ,255);
     ellipse(screen.width*map(cos(rotationX),-1,1,0,1), screen.height/2, 80, 80);
+    console.log("map "+map(cos(rotationX),-1,1,0,1));
+    console.log("no map "+cos(rotationX));
+    
     /*
 
     fill(128,0,0);
