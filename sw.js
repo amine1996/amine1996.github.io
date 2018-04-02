@@ -8,12 +8,20 @@ if (workbox)
 
   workbox.routing.registerRoute(
     new RegExp('/js/sketch.js'),
-    workbox.strategies.StaleWhileRevalidate()
+    workbox.strategies.staleWhileRevalidate(
+      {
+        cacheName : 'sketch'
+      }
+    )
   );
 
   workbox.routing.registerRoute(
     new RegExp('/index.html'),
-    workbox.strategies.StaleWhileRevalidate()
+    workbox.strategies.staleWhileRevalidate(
+      {
+        cacheName : 'index'
+      }
+    )
   );
 
   workbox.precaching.precacheAndRoute([
