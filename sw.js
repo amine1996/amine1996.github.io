@@ -6,6 +6,16 @@ if (workbox)
     modulePathPrefix: '/js/static/workbox/'
   });
 
+  workbox.routing.registerRoute(
+    new RegExp('/js/'),
+    workbox.strategies.networkFirst()
+  );
+
+  workbox.routing.registerRoute(
+    new RegExp('/index.html'),
+    workbox.strategies.networkFirst()
+  );
+  
   workbox.precaching.precacheAndRoute([
   {
     "url": "images/icon/icon.png",
