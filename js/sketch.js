@@ -1,13 +1,22 @@
+var lastOrientation;
+
 function setup() 
 {
   createCanvas(screen.width, screen.height);
+
+  if(deviceOrientation == LANDSCAPE)
+    resizeCanvas(screen.height, screen.width);
+
   background(255,255,255);   
   angleMode(DEGREES);
+
+  lastOrientation = deviceOrientation;
 }
 
 function draw() 
 {
   background(255,255,255);
+  resizeOnOrientationChange();
   
   textSize(20);
 
@@ -28,5 +37,18 @@ function draw()
   else
   {
     text("No rotation found",10,30);
+  }
+}
+
+function resizeOnOrientationChange() 
+{
+  if(lastOrientation != deviceOrientation)
+  {
+    if(deviceOrientation == LANDSCAPE)
+      resizeCanvas(screen.height,screen.width);
+    else
+      resizeCanvas(screen.width,screen.height);
+
+    lastOrientation = deviceOrientation;
   }
 }
