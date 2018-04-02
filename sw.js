@@ -123,9 +123,9 @@ if (workbox)
     },
   ])
 
-  workbox.routing(
-    '/js/sketch.js',
-    workbox.strategies.networkFirst()
+  workbox.routing.registerRoute(
+    new RegExp('/js/'),
+    workbox.strategies.staleWhileRevalidate()
   );
 
 } 
