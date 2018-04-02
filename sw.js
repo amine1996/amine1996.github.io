@@ -117,11 +117,11 @@ if (workbox)
   }
 ]);
 
-  workbox.precaching.precacheAndRoute([
+  /*workbox.precaching.precacheAndRoute([
     {
         "url": "sw.js",
     },
-  ])
+  ])*/
 
   workbox.routing.registerRoute(
     new RegExp('/js/'),
