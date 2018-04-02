@@ -21,7 +21,7 @@ if (workbox)
   },
   {
     "url": "index.html",
-    "revision": "75dbf25dcd1b9b13956a5386eaa5a462"
+    "revision": "cb7b103a20ed6b4fc222f2f06fec7aef"
   },
   {
     "url": "js/sketch.js",
