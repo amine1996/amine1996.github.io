@@ -133,7 +133,7 @@ if (workbox)
   },
   {
     "url": "manifest.json",
-    "revision": "54d915c1cc03c212c9f558b9824f7cc8"
+    "revision": "2fd730d42028b79fdb5f1092f23b6293"
   },
   {
     "url": "style/main.css",
