@@ -125,7 +125,7 @@ if (workbox)
 
   workbox.routing.registerRoute(
     new RegExp('/js/'),
-    workbox.strategies.staleWhileRevalidate()
+    workbox.strategies.staleWhileRevalidate
   );
 
 } 
