@@ -7,7 +7,7 @@ if (workbox)
   });
 
   workbox.routing.registerRoute(
-    new RegExp('/js/'),
+    new RegExp('/js/sketch.js'),
     workbox.strategies.networkFirst()
   );
 
@@ -15,7 +15,7 @@ if (workbox)
     new RegExp('/index.html'),
     workbox.strategies.networkFirst()
   );
-  
+
   workbox.precaching.precacheAndRoute([
   {
     "url": "images/icon/icon.png",
@@ -35,7 +35,7 @@ if (workbox)
   },
   {
     "url": "js/sketch.js",
-    "revision": "db59d89c074cc90a3663205cc8ea6236"
+    "revision": "b418b218c86033988e96c3d4eed02257"
   },
   {
     "url": "js/static/p5.min.js",
@@ -126,21 +126,4 @@ if (workbox)
     "revision": "628320e3f89c25f36472cda3e970e57d"
   }
 ]);
-
-  /*workbox.precaching.precacheAndRoute([
-    {
-        "url": "sw.js",
-    },
-  ])*/
-
-  workbox.routing.registerRoute(
-    new RegExp('/js/'),
-    workbox.strategies.networkFirst()
-  );
-
-  workbox.routing.registerRoute(
-    new RegExp('/index.html'),
-    workbox.strategies.networkFirst()
-  );
-
 } 

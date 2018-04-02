@@ -10,7 +10,7 @@ function draw()
   fill(255,0,0);
   ellipse(50, 50, 80, 80);
 
-  fill(255,128,255);
+  fill(0,128,255);
   textSize(20);
   if(rotationX != null && rotationY != null && rotationZ != null)
   {
