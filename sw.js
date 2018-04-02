@@ -10,7 +10,12 @@ if (workbox)
     new RegExp('/js/sketch.js'),
     workbox.strategies.networkFirst(
       {
-        cacheName : 'sketch'
+        cacheName : 'sketch',
+        plugins: [
+          new workbox.expiration.Plugin({
+            maxAgeSeconds: 0,
+          }),
+        ],
       }
     )
   );
@@ -19,7 +24,12 @@ if (workbox)
     new RegExp('index.html'),
     workbox.strategies.networkFirst(
       {
-        cacheName : 'index'
+        cacheName : 'index',
+        plugins: [
+          new workbox.expiration.Plugin({
+            maxAgeSeconds: 0,
+          }),
+        ],
       }
     )
   );
