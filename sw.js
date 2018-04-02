@@ -42,10 +42,6 @@ if (workbox)
     "revision": "a0e593671a490b32b2bbd07aef028d4b"
   },
   {
-    "url": "js/sketch.js",
-    "revision": "e5c5be3ed9953472caf143d201004d5b"
-  },
-  {
     "url": "js/static/p5.min.js",
     "revision": "571339230a0f0aee23593ce24996a8aa"
   },
