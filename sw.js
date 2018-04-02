@@ -122,15 +122,14 @@ if (workbox)
   workbox.precaching.precacheAndRoute([
     {
         "url": "sw.js",
-        workbox.strategies.staleWhileRevalidate
     },
   ])
 
   workbox.routing.registerRoute(
-    new RegExp('/js/sketch.js'),
-    workbox.strategies.staleWhileRevalidate()
+    '/js/sketch.js',
+    workbox.strategies.networkFirst()
   );
-  
+
 } 
 else 
 {
