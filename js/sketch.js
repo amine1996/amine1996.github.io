@@ -13,7 +13,7 @@ function draw()
   if(rotationX != null && rotationY != null && rotationZ != null)
   {
     fill(255,0 ,255);
-    ellipse(screen.width*map(cos(rotationX),-1,1,0,1), screen.height/2, 80, 80);
+    ellipse(screen.width*map(cos(rotationX*PI/180),-1,1,0,1), screen.height/2, 80, 80);
     /*
 
     fill(128,0,0);
