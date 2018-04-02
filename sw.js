@@ -16,7 +16,7 @@ if (workbox)
   );
 
   workbox.routing.registerRoute(
-    new RegExp('/index.html'),
+    new RegExp('index.html'),
     workbox.strategies.networkFirst(
       {
         cacheName : 'index'
