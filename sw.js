@@ -1,10 +1,10 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.0.0/workbox-sw.js');
+importScripts('/js/workbox/workbox-sw.js');
 
 if (workbox) 
 {
-  /*workbox.setConfig({
+  workbox.setConfig({
     modulePathPrefix: '/js/workbox-v3.0.1/'
-  });*/ 
+  });
 
   console.log('Yay! Workbox is loaded');
 
