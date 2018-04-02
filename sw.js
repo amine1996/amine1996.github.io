@@ -38,10 +38,6 @@ if (workbox)
     "revision": "39abd15879857661e9511087b0b5d54f"
   },
   {
-    "url": "index.html",
-    "revision": "a0e593671a490b32b2bbd07aef028d4b"
-  },
-  {
     "url": "js/static/p5.min.js",
     "revision": "571339230a0f0aee23593ce24996a8aa"
   },
