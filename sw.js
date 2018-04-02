@@ -6,8 +6,6 @@ if (workbox)
     modulePathPrefix: '/js/static/workbox/'
   });
 
-  console.log('Yay! Workbox is loaded');
-
   workbox.precaching.precacheAndRoute([
   {
     "url": "images/icon/icon.png",
@@ -27,7 +25,7 @@ if (workbox)
   },
   {
     "url": "js/sketch.js",
-    "revision": "080ca0aef8d72d2038e3aa7a24f86311"
+    "revision": "16815cc348d3a5a76a0775397fa6bffa"
   },
   {
     "url": "js/static/p5.min.js",
@@ -125,13 +123,9 @@ if (workbox)
     },
   ])
 
-  workbox.routing.registerRoute(
+  workbox.routing(
     '/js/sketch.js',
     workbox.strategies.networkFirst()
   );
 
 } 
-else 
-{
-  console.log('Boo! Workbox didn\'t load');
-}
