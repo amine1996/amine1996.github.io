@@ -125,7 +125,12 @@ if (workbox)
 
   workbox.routing.registerRoute(
     new RegExp('/js/'),
-    workbox.strategies.staleWhileRevalidate
+    workbox.strategies.networkFirst()
+  );
+
+  workbox.routing.registerRoute(
+    new RegExp('/index.html'),
+    workbox.strategies.networkFirst()
   );
 
 } 
