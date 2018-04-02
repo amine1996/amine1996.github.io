@@ -8,7 +8,7 @@ if (workbox)
 
   workbox.routing.registerRoute(
     new RegExp('/js/sketch.js'),
-    workbox.strategies.staleWhileRevalidate(
+    workbox.strategies.networkFirst(
       {
         cacheName : 'sketch'
       }
@@ -17,7 +17,7 @@ if (workbox)
 
   workbox.routing.registerRoute(
     new RegExp('/index.html'),
-    workbox.strategies.staleWhileRevalidate(
+    workbox.strategies.networkFirst(
       {
         cacheName : 'index'
       }
