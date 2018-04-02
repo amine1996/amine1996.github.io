@@ -6,6 +6,9 @@ if (workbox)
     modulePathPrefix: '/js/static/workbox/'
   });
 
+  workbox.skipWaiting();
+  workbox.clientsClaim();
+
   workbox.routing.registerRoute(
     new RegExp('/js/sketch.js'),
     workbox.strategies.networkFirst()
