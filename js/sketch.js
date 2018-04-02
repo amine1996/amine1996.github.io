@@ -1,3 +1,5 @@
+import { SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION } from "constants";
+
 function setup() 
 {
   createCanvas(screen.width, screen.height);
@@ -14,10 +16,7 @@ function draw()
   if(rotationX != null && rotationY != null && rotationZ != null)
   {
     fill(255,0 ,255);
-    ellipse(screen.width*map(cos(rotationX),-1,1,0,1), screen.height/2, 80, 80);
-    console.log("map "+map(cos(rotationX),-1,1,0,1));
-    console.log("no map "+cos(rotationX));
-    
+    ellipse(screen.width*map(cos(rotationY),-1,1,0,1), screen.height/2, 80, 80);
     /*
 
     fill(128,0,0);
