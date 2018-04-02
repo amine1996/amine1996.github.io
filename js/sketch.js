@@ -17,12 +17,12 @@ function draw()
 {
   background(255,255,255);
   resizeOnOrientationChange();
-  
+
   textSize(20);
 
   if(rotationX != null && rotationY != null && rotationZ != null)
   {
-    fill(255,0 ,255);
+    fill(255,255,0);
     ellipse(screen.width*map(cos(rotationY),-1,1,0,1), screen.height/2, 80, 80);
     /*
 
