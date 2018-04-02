@@ -6,8 +6,11 @@ function setup()
 function draw() 
 {
   background(255,255,255);
+
+  fill(255,0,0);
   ellipse(50, 50, 80, 80);
 
+  fill(0,0,255);
   textSize(20);
   if(rotationX != null && rotationY != null && rotationZ != null)
   {

@@ -23,11 +23,11 @@ if (workbox)
   },
   {
     "url": "index.html",
-    "revision": "af31f0364d2fa3d9996fe28164846226"
+    "revision": "62fe36171a0c39f7a61bd26ad7e1218a"
   },
   {
     "url": "js/sketch.js",
-    "revision": "a989908828982243e2a3f5ab32f848af"
+    "revision": "947caaa68093b23555b83faddf648fde"
   },
   {
     "url": "js/static/p5.min.js",
