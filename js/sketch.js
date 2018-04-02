@@ -7,10 +7,10 @@ function draw()
 {
   background(255,255,255);
 
-  fill(255,0,0);
+  fill(255,0,255);
   ellipse(50, 50, 80, 80);
 
-  fill(255,255,255);
+  fill(255,0,0);
   textSize(20);
   if(rotationX != null && rotationY != null && rotationZ != null)
   {
