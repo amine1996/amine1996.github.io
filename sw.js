@@ -35,7 +35,7 @@ if (workbox)
   },
   {
     "url": "js/sketch.js",
-    "revision": "7e5db34b4e62dc99a3ec2fdb3f22d9da"
+    "revision": "b418b218c86033988e96c3d4eed02257"
   },
   {
     "url": "js/static/p5.min.js",
