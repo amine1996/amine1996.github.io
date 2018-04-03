@@ -2,7 +2,7 @@
   "short_name": "Short Name",
   "name": "Full Name",
   "display": "fullscreen",
-  "orientation" : "landscape",
+  "orientation" : "portrait",
   "icons": [
     {
       "src": "images/icon/pwa-192x192.png",
