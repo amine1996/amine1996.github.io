@@ -30,7 +30,7 @@ function draw()
     fill(255,0,0);
     ellipse(screen.width*map(cos(lastRotationY+90),-1,1,0,1),screen.height/2, 80, 80);
 
-    deltaRotation = abs(rotationY - lastRotationY) > 0.5 ? 0.5 : rotationY;
+    deltaRotation = abs(rotationY - lastRotationY) > 0.5 ? 0.5 : abs(rotationY - lastRotationY);
     lastRotationY = rotationY - lastRotationY > 0 ? lastRotationY+deltaRotation : lastRotationY-deltaRotation;
   }
   else
