@@ -3,6 +3,8 @@
   "name": "Full Name",
   "display": "fullscreen",
   "orientation" : "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
   "icons": [
     {
       "src": "images/icon/pwa-192x192.png",

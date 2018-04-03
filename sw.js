@@ -49,7 +49,7 @@ if (workbox)
   },
   {
     "url": "index.html",
-    "revision": "a0e593671a490b32b2bbd07aef028d4b"
+    "revision": "e136708e33f7d5ac41a825c75a4491fd"
   },
   {
     "url": "js/static/p5.min.js",
@@ -133,7 +133,7 @@ if (workbox)
   },
   {
     "url": "manifest.json",
-    "revision": "2fd730d42028b79fdb5f1092f23b6293"
+    "revision": "649beefd59f6dd4c8545dc10badde1c6"
   },
   {
     "url": "style/main.css",
