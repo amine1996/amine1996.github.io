@@ -16,32 +16,18 @@ function setup()
 function draw() 
 {
   background(255,255,255);
-  
-  //resizeOnOrientationChange();
-  //centerCanvas();
-
-  textSize(20);
 
   if(rotationX != null && rotationY != null && rotationZ != null)
   {
     fill(255,255,0);
-    ellipse(screen.width*map(cos(rotationX),-1,1,0,1), screen.height/2, 80, 80);
-    /*
-
-    fill(128,0,0);
-    textSize(20);
-
-    text(rotationX,10,30);
-    text(rotationY,10,50);
-    text(rotationZ,10,70);
-    */
+    ellipse(screen.width*map(cos(rotationZ),-1,1,0,1), screen.height/2, 80, 80);
   }
   else
   {
     text("No rotation found",10,30);
   }
 }
-
+//Not used for the moment
 function resizeOnOrientationChange() 
 {
   if(lastOrientation != deviceOrientation)
@@ -53,4 +39,4 @@ function resizeOnOrientationChange()
 
     lastOrientation = deviceOrientation;
   }
-}
+}f
