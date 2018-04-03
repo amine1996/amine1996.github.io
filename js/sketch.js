@@ -39,4 +39,4 @@ function resizeOnOrientationChange()
 
     lastOrientation = deviceOrientation;
   }
-}f
+}
