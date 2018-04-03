@@ -17,8 +17,8 @@ function draw()
 {
   background(255,255,255);
   
-  resizeOnOrientationChange();
-  centerCanvas();
+  //resizeOnOrientationChange();
+  //centerCanvas();
 
   textSize(20);
 
