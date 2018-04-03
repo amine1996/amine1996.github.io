@@ -6,34 +6,6 @@ if (workbox)
     modulePathPrefix: '/js/static/workbox/'
   });
 
-  workbox.routing.registerRoute(
-    new RegExp('/js/sketch.js'),
-    workbox.strategies.networkFirst(
-      {
-        cacheName : 'sketch',
-        plugins: [
-          new workbox.expiration.Plugin({
-            maxAgeSeconds: 0,
-          }),
-        ],
-      }
-    )
-  );
-
-  workbox.routing.registerRoute(
-    new RegExp('index.html'),
-    workbox.strategies.networkFirst(
-      {
-        cacheName : 'index',
-        plugins: [
-          new workbox.expiration.Plugin({
-            maxAgeSeconds: 0,
-          }),
-        ],
-      }
-    )
-  );
-
   workbox.precaching.precacheAndRoute([
   {
     "url": "images/icon/icon.png",
@@ -140,4 +112,32 @@ if (workbox)
     "revision": "628320e3f89c25f36472cda3e970e57d"
   }
 ]);
+
+  workbox.routing.registerRoute(
+    new RegExp('/js/sketch.js'),
+    workbox.strategies.networkFirst(
+      {
+        cacheName : 'sketch',
+        plugins: [
+          new workbox.expiration.Plugin({
+            maxAgeSeconds: 0,
+          }),
+        ],
+      }
+    )
+  );
+
+  workbox.routing.registerRoute(
+    new RegExp('index.html'),
+    workbox.strategies.networkFirst(
+      {
+        cacheName : 'index',
+        plugins: [
+          new workbox.expiration.Plugin({
+            maxAgeSeconds: 0,
+          }),
+        ],
+      }
+    )
+  );
 } 
