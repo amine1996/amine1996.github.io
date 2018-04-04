@@ -33,11 +33,11 @@ function draw()
   {
     //Vertical bubble
     fill(255,0,0);
-    ellipse(screen.width/2, screen.height*map(-cos(lastRotationX+90),-1,1,0.05,0.95), 80, 80);
+    ellipse(screen.width/2, screen.height*map(cos(lastRotationX+90),-1,1,0.05,0.95), 80, 80);
 
     //Horizontal bubble
     fill(0,0,255);
-    ellipse(screen.width*map(-cos(lastRotationY+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
+    ellipse(screen.width*map(cos(lastRotationY+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
     //Not working properly
     let deltaRotationY = sin(rotationY) - sin(lastRotationY);
