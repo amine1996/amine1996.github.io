@@ -24,6 +24,7 @@ function draw()
 {
   background(255,255,255);
 
+  //Mode sur le côté
   if(rotationY != null)
   {
     fill(0,0,0);
@@ -31,14 +32,14 @@ function draw()
     text("RotationY : "+rotationY,50,70);
     text("RotationZ : "+rotationZ,50,100);
 
-    fill(255,0,255);
+    fill(0,0,255);
     ellipse(screen.width/2, screen.height*map(cos(lastRotationY),-1,1,0.05,0.95), 80, 80);
 
-    fill(255,255,0);
+    fill(0,255,0);
     ellipse(screen.width*map(cos(lastRotationY+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
     //Not working, looking for a fluid movement and also faster as the difference is bigger
-    let deltaRotation = (rotationY%180) - lastRotationY;
+    let deltaRotation = (rotationY%180) - abs(lastRotationY);
     
     lastRotationY += map(deltaRotation,0,180,0,5);
   }
