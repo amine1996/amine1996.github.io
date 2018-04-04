@@ -40,20 +40,13 @@ function draw()
     ellipse(screen.width*map(-cos(lastRotationY),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
     //Not working properly
-    let deltaRotationY = rotationY - lastRotationY;
+    let deltaRotationY = rotationY - abs(lastRotationY);
     lastRotationY += map(deltaRotationY,0,180,-5,5);
 
     //Not working properly
     let deltaRotationX = 0
-
-    if(rotationX > 90)
-      deltaRotationX = (90-rotationX%90) - lastRotationX;
-    else if(rotationX < -90)
-      deltaRotationX = (-90+rotationX%90) - lastRotationX;
-    else
-      deltaRotationX = rotationX - lastRotationX;
-  
-    lastRotationX += map(deltaRotationX,-180,180,-5,5);
+    deltaRotationX = rotationX - abs(lastRotationX);
+    lastRotationX += map(deltaRotationX,0,180,-5,5);
 
     fill(0,0,0);
     text("RotationX : "+rotationX,50,40);
