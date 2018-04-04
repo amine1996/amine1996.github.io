@@ -33,22 +33,23 @@ function draw()
   //A plat
   if(rotationY != null && rotationX != null)
   {
-    //Vertical bubble
-    fill(255,0,0);
-    ellipse(screen.width/2, screen.height*map(cos(lastRotationX+90),-1,1,0.05,0.95), 80, 80);
-
     //Horizontal bubble
+    //Not working properly
+    let deltaRotationY = cos(rotationY+90) - cos(lastRotationY+90);
+    lastRotationY += map(deltaRotationY,-2,2,-5,5)
+
     fill(0,0,255);
     ellipse(screen.width*map(cos(lastRotationY+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
-    //Not working properly
-    let deltaRotationY = cos(rotationY) - cos(lastRotationY);
-    lastRotationY += map(deltaRotationY,-2,2,-5,5)
-
+    //Vertical bubble
     //OK
     let deltaRotationX = sin(rotationX) - sin(lastRotationX);
     lastRotationX += map(deltaRotationX,-2,2,-5,5)
 
+    fill(255,0,0);
+    ellipse(screen.width/2, screen.height*map(cos(lastRotationX+90),-1,1,0.05,0.95), 80, 80);
+
+        
     if(DEBUG)
     {
       fill(0,0,0);
