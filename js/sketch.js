@@ -27,9 +27,9 @@ function draw()
   if(rotationY != null)
   {
     fill(0,0,0);
-    text("RotationX : "+rotationX);
-    text("RotationY : "+rotationY);
-    text("RotationZ : "+rotationZ);
+    text("RotationX : "+rotationX,50,40);
+    text("RotationY : "+rotationY,50,70);
+    text("RotationZ : "+rotationZ,50,100);
 
     fill(255,0,255);
     ellipse(screen.width/2, screen.height*map(cos(lastRotationY),-1,1,0.05,0.95), 80, 80);
