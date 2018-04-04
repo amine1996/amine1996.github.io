@@ -60,9 +60,9 @@ function draw()
     text("RotationY : "+rotationY,50,70);
     text("RotationZ : "+rotationZ,50,100);
 
-    text("lastRotationX : "+rotationX,50,140);
-    text("lastRotationY : "+rotationY,50,170);
-    text("lastRotationZ : "+rotationZ,50,200);
+    text("lastRotationX : "+lastRotationX,50,140);
+    text("lastRotationY : "+lastRotationY,50,170);
+    text("lastRotationZ : "+lastRotationZ,50,200);
   }
   else
   {
