@@ -37,11 +37,11 @@ function draw()
     text("RotationZ : "+rotationZ,50,100);
 
     //Vertical bubble
-    fill(0,255,128);
+    fill(255,0,0);
     ellipse(screen.width/2, screen.height*map(-cos(lastRotationX),-1,1,0.05,0.95), 80, 80);
 
     //Horizontal bubble
-    fill(128,0,255);
+    fill(0,0,255);
     ellipse(screen.width*map(-cos(lastRotationY),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
     //Not working properly
@@ -50,7 +50,7 @@ function draw()
 
     //Not working properly
     let deltaRotationX = 0
-    
+
     if(rotationX > 90)
       deltaRotationX = (90-rotationX%90) - lastRotationX;
     else if(rotationX < -90)
