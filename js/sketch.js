@@ -45,11 +45,11 @@ function draw()
     ellipse(screen.width*map(cos(lastRotationY),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
     //Not working properly
-    let deltaRotationY = lastRotationY - rotationY;
+    let deltaRotationY = rotationY - lastRotationY;
     lastRotationY += map(deltaRotationY,0,180,-5,5);
 
     //Not working properly
-    let deltaRotationX = lastRotationX - rotationX;
+    let deltaRotationX = rotationX - lastRotationX;
     lastRotationX += map(deltaRotationX,0,180,-5,5);
   }
   else
