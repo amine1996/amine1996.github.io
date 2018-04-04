@@ -31,11 +31,6 @@ function draw()
   //A plat
   if(rotationY != null && rotationX != null)
   {
-    fill(0,0,0);
-    text("RotationX : "+rotationX,50,40);
-    text("RotationY : "+rotationY,50,70);
-    text("RotationZ : "+rotationZ,50,100);
-
     //Vertical bubble
     fill(255,0,0);
     ellipse(screen.width/2, screen.height*map(-cos(lastRotationX),-1,1,0.05,0.95), 80, 80);
@@ -59,6 +54,15 @@ function draw()
       deltaRotationX = rotationX - lastRotationX;
   
     lastRotationX += map(deltaRotationX,0,180,-5,5);
+
+    fill(0,0,0);
+    text("RotationX : "+rotationX,50,40);
+    text("RotationY : "+rotationY,50,70);
+    text("RotationZ : "+rotationZ,50,100);
+
+    text("lastRotationX : "+rotationX,50,140);
+    text("lastRotationY : "+rotationY,50,170);
+    text("lastRotationZ : "+rotationZ,50,200);
   }
   else
   {
