@@ -28,7 +28,7 @@ function draw()
   background(255,255,255);
 
   //A plat
-  if(rotationY != null)
+  if(rotationY != null && rotationX != null)
   {
     fill(0,0,0);
     text("RotationX : "+rotationX,50,40);
