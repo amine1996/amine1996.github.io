@@ -41,7 +41,7 @@ function draw()
     ellipse(screen.width/2, screen.height*map(-cos(lastRotationX),-1,1,0.05,0.95), 80, 80);
 
     //Horizontal bubble
-    fill(0,255,0);
+    fill(128,0,0);
     ellipse(screen.width*map(-cos(lastRotationY),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
     //Not working properly
