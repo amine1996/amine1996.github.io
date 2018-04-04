@@ -42,7 +42,7 @@ function draw()
 
     //Bulle horizontale
     fill(128,255,255);
-    ellipse(screen.width*map(cos(lastRotationY+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
+    ellipse(screen.width*map(cos(lastRotationY),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
     let deltaRotationY = rotationY - lastRotationY;
     lastRotationY += map(deltaRotationY,0,180,-5,5);
