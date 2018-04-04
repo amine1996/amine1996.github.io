@@ -39,9 +39,9 @@ function draw()
     ellipse(screen.width*map(cos(lastRotationY+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
     //Not working, looking for a fluid movement and also faster as the difference is bigger
-    let deltaRotation = (rotationY%180) - abs(lastRotationY);
+    let deltaRotation = (abs(rotationY)%180) - lastRotationY;
     
-    lastRotationY += map(deltaRotation,0,180,0,5);
+    lastRotationY += (map(deltaRotation,0,180,0,5)%180);
   }
   else
   {
