@@ -4,6 +4,7 @@ var lastOrientation;
 //Last Y rotation
 var lastRotationY;
 
+//Last X rotation
 var lastRotationX;
 
 function setup() 
@@ -44,10 +45,10 @@ function draw()
     ellipse(screen.width*map(cos(lastRotationY+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
     let deltaRotationY = rotationY - lastRotationY;
-    lastRotationY += map(deltaRotation,0,180,-5,5);
+    lastRotationY += map(deltaRotationY,0,180,-5,5);
 
     let deltaRotationX = rotationX - lastRotationX;
-    lastRotationX += map(deltaRotation,0,180,-5,5);
+    lastRotationX += map(deltaRotationX,0,180,-5,5);
   }
   else
   {
