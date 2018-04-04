@@ -15,7 +15,9 @@ function setup()
   angleMode(DEGREES);
 
   lastOrientation = deviceOrientation;
-  lastRotationY = 0;
+  lastRotationY = 0; 
+
+  textSize(20);
 }
 
 function draw() 
@@ -24,6 +26,10 @@ function draw()
 
   if(rotationY != null)
   {
+    text("RotationX : "+rotationX);
+    text("RotationY : "+rotationY);
+    text("RotationZ : "+rotationZ);
+
     fill(255,0,255);
     ellipse(screen.width/2, screen.height*map(cos(lastRotationY),-1,1,0.05,0.95), 80, 80);
 
@@ -31,7 +37,7 @@ function draw()
     ellipse(screen.width*map(cos(lastRotationY+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
     //Not working, looking for a fluid movement and also faster as the difference is bigger
-    let deltaRotation = rotationY - lastRotationY;
+    let deltaRotation = (rotationY%180) - lastRotationY;
     
     lastRotationY += map(deltaRotation,0,360,0,5);
   }
