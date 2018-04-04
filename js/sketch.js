@@ -36,19 +36,21 @@ function draw()
     text("RotationY : "+rotationY,50,70);
     text("RotationZ : "+rotationZ,50,100);
 
-    //Bulle verticale
+    //Vertical bubble
     fill(0,255,128);
     ellipse(screen.width/2, screen.height*map(cos(lastRotationX),-1,1,0.05,0.95), 80, 80);
 
-    //Bulle horizontale
+    //Horizontal bubble
     fill(128,255,0);
     ellipse(screen.width*map(cos(lastRotationY),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
+    //Not working properly
     let deltaRotationY = rotationY - lastRotationY;
-    lastRotationY += map(deltaRotationY,0,180,-5,5);
+    lastRotationY -= map(deltaRotationY,0,180,-5,5);
 
+    //Not working properly
     let deltaRotationX = rotationX - lastRotationX;
-    lastRotationX += map(deltaRotationX,0,180,-5,5);
+    lastRotationX -= map(deltaRotationX,0,180,-5,5);
   }
   else
   {
