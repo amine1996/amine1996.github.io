@@ -53,7 +53,7 @@ function draw()
     else
       deltaRotationX = rotationX - lastRotationX;
   
-    lastRotationX += map(deltaRotationX,-90,90,-5,5);
+    lastRotationX += map(deltaRotationX,-180,180,-5,5);
 
     fill(0,0,0);
     text("RotationX : "+rotationX,50,40);
