@@ -26,6 +26,7 @@ function draw()
 
   if(rotationY != null)
   {
+    fill(0,0,0);
     text("RotationX : "+rotationX);
     text("RotationY : "+rotationY);
     text("RotationZ : "+rotationZ);
