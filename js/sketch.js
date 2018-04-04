@@ -46,7 +46,7 @@ function draw()
 
     //Not working properly
     let deltaRotationY = rotationY - lastRotationY;
-    lastRotationY += map(deltaRotationY,0,180,-5,5);
+    lastRotationY += map(deltaRotationY,-90,90,-5,5);
 
     //Not working properly
     let deltaRotationX = rotationX - lastRotationX;
