@@ -24,16 +24,16 @@ function draw()
 
   if(rotationY != null)
   {
-    fill(0,255,0);
+    fill(255,0,255);
     ellipse(screen.width/2, screen.height*map(cos(lastRotationY),-1,1,0.05,0.95), 80, 80);
 
-    fill(255,0,0);
+    fill(0,255,255);
     ellipse(screen.width*map(cos(lastRotationY+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
     //Not working, looking for a fluid movement and also faster as the difference is bigger
     let deltaRotation = rotationY - lastRotationY;
     
-    lastRotationY += map(deltaRotation,0,360,0,0.5);
+    lastRotationY += map(deltaRotation,0,360,0,5);
   }
   else
   {
