@@ -35,7 +35,7 @@ function draw()
   {
     //Horizontal bubble
     //Not working properly
-    let deltaRotationY = cos(rotationY+90) - cos(lastRotationY+90);
+    let deltaRotationY = sin(map(rotationY,-90,90,-180,180)) - cos(lastRotationY);
     lastRotationY += map(deltaRotationY,-2,2,-5,5)
 
     fill(0,0,255);
