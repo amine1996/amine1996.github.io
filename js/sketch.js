@@ -7,6 +7,8 @@ var lastRotationY;
 //Last X rotation
 var lastRotationX;
 
+const DEBUG = true;
+
 function setup() 
 {
   createCanvas(screen.width, screen.height);
@@ -43,17 +45,20 @@ function draw()
     let deltaRotationY = cos(rotationY) - cos(lastRotationY);
     lastRotationY += map(deltaRotationY,-2,2,-5,5)
 
-    //Not working properly
+    //OK
     let deltaRotationX = sin(rotationX) - sin(lastRotationX);
     lastRotationX += map(deltaRotationX,-2,2,-5,5)
 
-    fill(0,0,0);
-    text("RotationX : "+rotationX,50,40);
-    text("RotationY : "+rotationY,50,70);
-    text("RotationZ : "+rotationZ,50,100);
+    if(DEBUG)
+    {
+      fill(0,0,0);
+      text("RotationX : "+rotationX,50,40);
+      text("RotationY : "+rotationY,50,70);
+      text("RotationZ : "+rotationZ,50,100);
 
-    text("lastRotationX : "+lastRotationX,50,140);
-    text("lastRotationY : "+lastRotationY,50,170);
+      text("lastRotationX : "+lastRotationX,50,140);
+      text("lastRotationY : "+lastRotationY,50,170);
+    }
   }
   else
   {
