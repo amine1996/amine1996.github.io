@@ -39,7 +39,7 @@ function draw()
     //Not working, looking for a fluid movement and also faster as the difference is bigger
     let deltaRotation = (rotationY%180) - lastRotationY;
     
-    lastRotationY += map(deltaRotation,0,360,0,5);
+    lastRotationY += map(deltaRotation,0,180,0,5);
   }
   else
   {
