@@ -40,8 +40,8 @@ function draw()
     text("No rotation found",10,30);
   }
 }
-//Not used for the moment
-function resizeOnOrientationChange() 
+//Not used for the moment-
+function resizeOnOrientationChange()
 {
   if(lastOrientation != deviceOrientation)
   {
