@@ -31,16 +31,16 @@ function draw()
     let deltaRotationY = sin(rotationY) - sin(horizontalBubbleAngle);
     horizontalBubbleAngle += map(deltaRotationY,-2,2,-5,5)
 
-    fill(0,0,255);
-    ellipse(screen.width*map(cos(horizontalBubbleAngle+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
+    if(rotationY < 45 && rotationY > -45)
+    {
+      fill(0,0,255);
+      ellipse(screen.width*map(cos(horizontalBubbleAngle+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
+    }
 
     //Vertical bubble
     //OK
-    if(rotationX < 45 && rotationX > -45)
-    {
-      let deltaRotationX = sin(rotationX,-45,45) - sin(verticalBubbleAngle);
-      verticalBubbleAngle += map(deltaRotationX,-2,2,-5,5)
-    }
+    let deltaRotationX = sin(rotationX,-45,45) - sin(verticalBubbleAngle);
+    verticalBubbleAngle += map(deltaRotationX,-2,2,-5,5)
 
     fill(255,0,0);
     ellipse(screen.width/2, screen.height*map(cos(verticalBubbleAngle+90),-1,1,0.05,0.95), 80, 80);
