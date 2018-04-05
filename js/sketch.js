@@ -23,7 +23,7 @@ function setup()
 
   textSize(20);
 
-  promise = FULLTILT.getDeviceOrientation({'type': 'world'});
+  promise = new FULLTILT.getDeviceOrientation({'type': 'world'});
 }
 
 function draw() 
