@@ -22,8 +22,10 @@ function setup()
 
   textSize(20);
 
-  bubbleHorizontalImg = loadImage("/images/bubble.png").resize(radHorizontalBubble,radHorizontalBubble);
-  bubbleVerticalImg = loadImage("/images/bubble.png").resize(radVerticalBubble,radVerticalBubble);
+  bubbleHorizontalImg = loadImage("/images/bubble.png");
+  bubbleHorizontalImg.resize(radHorizontalBubble,radHorizontalBubble);
+  bubbleVerticalImg = loadImage("/images/bubble.png");
+  bubbleHorizontalImg.resize(radVerticalBubble,radVerticalBubble);
 }
 
 function draw() 
