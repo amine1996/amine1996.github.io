@@ -18,8 +18,6 @@ function setup()
   verticalBubbleRx = 0;
 
   textSize(20);
-
-  mo.init();
 }
   
 function draw() 
