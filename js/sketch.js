@@ -25,7 +25,7 @@ function setup()
   bubbleHorizontalImg = loadImage("/images/bubble.png");
   bubbleHorizontalImg = bubbleHorizontalImg.resize(radHorizontalBubble,radHorizontalBubble);
   bubbleVerticalImg = loadImage("/images/bubble.png");
-  bubbleVerticalImg = bubbleHorizontalImg.resize(radVerticalBubble,radVerticalBubble);
+  bubbleVerticalImg = bubbleVerticalImg.resize(radVerticalBubble,radVerticalBubble);
 }
 
 function draw() 
