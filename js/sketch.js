@@ -43,7 +43,7 @@ function draw()
     }
 
     let deltaRotationY = cos(rotationY) - cos(horizontalBubbleAngle);
-    verticalBubbleAngle += map(deltaRotationY,-2,2,-5,5)
+    horizontalBubbleAngle += map(deltaRotationY,-2,2,-5,5)
 
     fill(0,0,255);
     ellipse(screen.width*map(cos(horizontalBubbleAngle+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
