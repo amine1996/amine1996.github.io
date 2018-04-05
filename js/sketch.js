@@ -33,14 +33,14 @@ function draw()
 
 
     fill(0,0,255);
-    ellipse(screen.width*map(cos(horizontalBubbleAngle+90),-1,1,0.10,0.9),screen.height-(screen.height*0.15 / 2), radHorizontalBubble, radHorizontalBubble);
+    ellipse(screen.width*map(cos(horizontalBubbleAngle+90),-1,1,0.10,0.9),screen.height-(screen.height*0.25 / 2), radHorizontalBubble, radHorizontalBubble);
 
     //Vertical bubble
     let deltaRotationX = sin(rotationX) - sin(verticalBubbleAngle);
     verticalBubbleAngle += map(deltaRotationX,-2,2,-5,5)
 
     fill(255,0,0);
-    ellipse(screen.width-(screen.width*0.15/2), (screen.height*0.85)*map(cos(verticalBubbleAngle+90),-1,1,0.10,0.90), radVerticalBubble, radVerticalBubble);
+    ellipse(screen.width-(screen.width*0.25/2), (screen.height*0.75)*map(cos(verticalBubbleAngle+90),-1,1,0.10,0.90), radVerticalBubble, radVerticalBubble);
 
     if(DEBUG)
     {
