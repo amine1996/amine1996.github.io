@@ -86,24 +86,24 @@ function test()
     function(test) 
     {
       var euler = test.getScreenAdjustedEuler();
+
+      let Rx = -cos(euler.alpha)*sin(euler.gamma)-sin(euler.alpha)*sin(euler.beta)*cos(euler.gamma);
+      let Ry = -sin(euler.alpha)*sin(euler.gamma)+cos(euler.alpha)*sin(euler.beta)*cos(euler.gamma);
+      let Rz = -cos(euler.beta)*cos(euler.gamma);
+    
+      //Remap values from -0.5 to 0.5
+      Rx = map(Rx,-1,1,-0.5,0.5);
+      Ry = map(Ry,-1,1,-0.5,0.5);
+      Rz = map(Rz,-1,1,-0.5,0.5);
+    
+      return createVector(Rx,Ry,Rz);
     }
   ).catch(
     function(message) 
     {
-      // Device Orientation Events are not supported
-  
-      // Implement manual fallback controls instead...
+      return createVector(0,0,0);
     }
   );
 
-  let Rx = -cos(euler.alpha)*sin(euler.gamma)-sin(euler.alpha)*sin(euler.beta)*cos(euler.gamma);
-  let Ry = -sin(euler.alpha)*sin(euler.gamma)+cos(euler.alpha)*sin(euler.beta)*cos(euler.gamma);
-  let Rz = -cos(euler.beta)*cos(euler.gamma);
 
-  //Remap values from -0.5 to 0.5
-  Rx = map(Rx,-1,1,-0.5,0.5);
-  Ry = map(Ry,-1,1,-0.5,0.5);
-  Rz = map(Rz,-1,1,-0.5,0.5);
-
-  return createVector(Rx,Ry,Rz);
 }
