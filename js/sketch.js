@@ -9,6 +9,8 @@ var verticalBubbleAngle;
 
 const DEBUG = true;
 
+var color = 255;
+
 function setup() 
 {
   createCanvas(screen.width, screen.height);
@@ -28,7 +30,7 @@ function setup()
 
 function draw() 
 {
-  background(255,255,255);
+  background(255,255,color);
 
   //A plat
   if(rotationY != null && rotationX != null)
@@ -55,6 +57,8 @@ function draw()
 
     fill(255,0,0);
     ellipse(screen.width/2, screen.height*map(cos(verticalBubbleAngle+90),-1,1,0.05,0.95), 80, 80);
+
+    text(turnAxis,)
 
         
     if(DEBUG)
@@ -84,5 +88,20 @@ function resizeOnOrientationChange()
       resizeCanvas(screen.width,screen.height);
 
     lastOrientation = deviceOrientation;
+  }
+}
+
+function deviceTurned() 
+{
+  if (turnAxis == 'X')
+  {
+    if (color == 0)
+    {
+      color = 255
+    } 
+    else if (color == 255) 
+    {
+        color = 0;
+    }
   }
 }
