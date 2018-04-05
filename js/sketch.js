@@ -85,4 +85,6 @@ function getWGSRotationVector()
 function update_gyro(e) 
 {
   current_orientation = deviceOrientation(e); 
+
+  console.log("salut");
 }
