@@ -1,8 +1,9 @@
 //Last Y rotation
 var horizontalBubbleAngle;
-
+const radHorizontalBubble = 80;
 //Last X rotation
 var verticalBubbleAngle;
+const radVerticalBubble = 80;
 
 const DEBUG = true;
 
@@ -27,25 +28,20 @@ function draw()
   if(rotationY != null && rotationX != null)
   {
     //Horizontal bubble
-    //Not working properly
-    if(rotationY < 45 && rotationY > -45)
-    {
-      let deltaRotationY = sin(rotationY) - sin(horizontalBubbleAngle);
-      horizontalBubbleAngle += map(deltaRotationY,-2,2,-5,5)
-    }
+    let deltaRotationY = sin(rotationY) - sin(horizontalBubbleAngle);
+    horizontalBubbleAngle += map(deltaRotationY,-2,2,-5,5)
+
 
     fill(0,0,255);
-    ellipse(screen.width*map(cos(horizontalBubbleAngle+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
+    ellipse(screen.width*map(cos(horizontalBubbleAngle+90),-1,1,0.05,0.95),screen.height/2, radHorizontalBubble, radHorizontalBubble);
 
     //Vertical bubble
-    //OK
     let deltaRotationX = sin(rotationX,-45,45) - sin(verticalBubbleAngle);
     verticalBubbleAngle += map(deltaRotationX,-2,2,-5,5)
 
     fill(255,0,0);
-    ellipse(screen.width/2, screen.height*map(cos(verticalBubbleAngle+90),-1,1,0.05,0.95), 80, 80);
+    ellipse(screen.width/2, screen.height*map(cos(verticalBubbleAngle+90),-1,1,0.05,0.95), radVerticalBubble, radVerticalBubble);
 
-        
     if(DEBUG)
     {
       fill(0,0,0);
