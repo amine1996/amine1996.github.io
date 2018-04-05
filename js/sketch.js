@@ -55,9 +55,9 @@ function draw()
           var euler = deviceOrientation.getScreenAdjustedEuler();
      
           // Do something with our quaternion, matrix, euler objects... 
-          console.debug(quaternion);
-          console.debug(matrix);
-          console.debug(euler);
+          console.log(quaternion);
+          console.log(matrix);
+          console.log(euler);
         }
       ).catch(
         function(message) {
