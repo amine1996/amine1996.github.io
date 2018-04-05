@@ -21,7 +21,11 @@ if (workbox)
   },
   {
     "url": "index.html",
-    "revision": "08c36cc18ecaee3906679950449b90ed"
+    "revision": "bcca270502fce62dc95cc254d5b7134b"
+  },
+  {
+    "url": "js/static/fulltilt.min.js",
+    "revision": "f3815a3628a71de46e47cada27034371"
   },
   {
     "url": "js/static/p5.min.js",
