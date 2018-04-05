@@ -1,9 +1,12 @@
 //Last Y rotation
 var horizontalBubbleAngle;
 const radHorizontalBubble = 80;
+var bubbleHorizontalImg;
+
 //Last X rotation
 var verticalBubbleAngle;
 const radVerticalBubble = 80;
+var bubbleVerticalImg;
 
 const DEBUG = true;
 
@@ -18,6 +21,9 @@ function setup()
   verticalBubbleAngle = 0;
 
   textSize(20);
+
+  bubbleHorizontalImg = loadImage("images/bubble.png").resize(radHorizontalBubble,radHorizontalBubble);
+  bubbleVerticalImg = loadImage("images/bubble.png").resize(radVerticalBubble,radVerticalBubble);
 }
 
 function draw() 
@@ -32,15 +38,16 @@ function draw()
     horizontalBubbleAngle += map(deltaRotationY,-2,2,-5,5)
 
 
-    fill(0,0,255);
-    ellipse(screen.width*map(cos(horizontalBubbleAngle+90),-1,1,0.10,0.9),screen.height-(screen.height*0.25 / 2)-radHorizontalBubble, radHorizontalBubble, radHorizontalBubble);
-
+    fill(255,255,0);
+    //ellipse(screen.width*map(cos(horizontalBubbleAngle+90),-1,1,0.10,0.9),screen.height-(screen.height*0.25 / 2)-radHorizontalBubble, radHorizontalBubble, radHorizontalBubble);
+    image(bubbleHorizontalImg,screen.width*map(cos(horizontalBubbleAngle+90),-1,1,0.10,0.9),screen.height-(screen.height*0.25 / 2)-radHorizontalBubble);
     //Vertical bubble
     let deltaRotationX = sin(rotationX) - sin(verticalBubbleAngle);
     verticalBubbleAngle += map(deltaRotationX,-2,2,-5,5)
 
-    fill(255,0,0);
-    ellipse(screen.width-(screen.width*0.25/2)-radVerticalBubble, (screen.height*0.75-radHorizontalBubble)*map(cos(verticalBubbleAngle+90),-1,1,0.10,0.90), radVerticalBubble, radVerticalBubble);
+    fill(255,255,0);
+    //ellipse(screen.width-(screen.width*0.25/2)-radVerticalBubble, (screen.height*0.75-radHorizontalBubble)*map(cos(verticalBubbleAngle+90),-1,1,0.10,0.90), radVerticalBubble, radVerticalBubble);
+    image(bubbleVerticalImg,screen.width-(screen.width*0.25/2)-radVerticalBubble, (screen.height*0.75-radHorizontalBubble)*map(cos(verticalBubbleAngle+90),-1,1,0.10,0.90))
 
     if(DEBUG)
     {

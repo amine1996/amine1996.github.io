@@ -8,6 +8,10 @@ if (workbox)
 
   workbox.precaching.precacheAndRoute([
   {
+    "url": "images/bubble.png",
+    "revision": "0d29b4cf4414a6cf1f3440b50c75fc58"
+  },
+  {
     "url": "images/icon/icon.png",
     "revision": "d2bc415466561c6cdace675c530743c0"
   },
