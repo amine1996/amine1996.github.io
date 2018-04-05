@@ -36,11 +36,7 @@ function draw()
     //Horizontal bubble
     //Not working properly
     let deltaRotationY = cos(rotationY) - cos(lastRotationY);
-    if(rotationY < 0)
-      lastRotationY += map(deltaRotationY,-2,2,-5,5)
-    else
-      lastRotationY -= map(deltaRotationY,-2,2,-5,5)
-
+    
     fill(0,0,255);
     ellipse(screen.width*map(cos(lastRotationY+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
 
@@ -67,18 +63,5 @@ function draw()
   else
   {
     text("No rotation found",10,30);
-  }
-}
-//Not used for the moment-
-function resizeOnOrientationChange()
-{
-  if(lastOrientation != deviceOrientation)
-  {
-    if(deviceOrientation == LANDSCAPE)
-      resizeCanvas(screen.height,screen.width);
-    else
-      resizeCanvas(screen.width,screen.height);
-
-    lastOrientation = deviceOrientation;
   }
 }
