@@ -43,6 +43,7 @@ function draw()
     }
     else
     {
+      deltaRotationY = cos(rotationY) - cos(lastRotationY);
       lastRotationY -= map(deltaRotationY,-2,2,-5,5)
     }
 
