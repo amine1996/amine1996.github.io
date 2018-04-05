@@ -93,7 +93,7 @@ function resizeOnOrientationChange()
 
 function deviceTurned() 
 {
-  if (turnAxis == 'X')
+  if (turnAxis == 'Y')
   {
     if (color == 0)
     {
