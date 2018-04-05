@@ -10,6 +10,12 @@ var bubbleVerticalImg;
 
 const DEBUG = true;
 
+function preload()
+{
+  bubbleHorizontalImg = loadImage("/images/bubble.png");
+  bubbleVerticalImg = loadImage("/images/bubble.png");
+}
+
 function setup() 
 {
   createCanvas(screen.width, screen.height);
@@ -22,10 +28,7 @@ function setup()
 
   textSize(20);
 
-  bubbleHorizontalImg = loadImage("/images/bubble.png");
   bubbleHorizontalImg.resize(radHorizontalBubble,radHorizontalBubble);
-
-  bubbleVerticalImg = loadImage("/images/bubble.png");
   bubbleVerticalImg.resize(radVerticalBubble,radVerticalBubble);
 }
 
