@@ -35,12 +35,18 @@ function draw()
   {
     //Horizontal bubble
     //Not working properly
-    if(abs(lastRotationY-rotationY) > 90)
+
+    let deltaRotationY = 0;
+
+    if(abs(rotationY) > 45)
     {
-      lastRotationY = rotationY
+      deltaRotationY = cos(rotationY) - cos(lastRotationY)
+    }
+    else
+    {
+      deltaRotationY = sin(rotationY) - sin(lastRotationY)
     }
 
-    let deltaRotationY = cos(rotationY) - cos(lastRotationY);
     lastRotationY += map(deltaRotationY,-2,2,-5,5)
     /*if(abs(lastRotationY-rotationY)  < 0)
     {
