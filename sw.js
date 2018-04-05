@@ -21,7 +21,7 @@ if (workbox)
   },
   {
     "url": "index.html",
-    "revision": "bcca270502fce62dc95cc254d5b7134b"
+    "revision": "08c36cc18ecaee3906679950449b90ed"
   },
   {
     "url": "js/static/fulltilt.min.js",
