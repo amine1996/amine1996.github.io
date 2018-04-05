@@ -60,9 +60,9 @@ function draw()
  */
 function getWGSRotationVector()
 {
-  let Rx = -cos(rotationZ)*sin(rotationY)-sin(rotationZ)*sin(rotationX)*cos(rotationY);
-  let Ry = -sin(rotationZ)*sin(rotationY)+cos(rotationZ)*sin(rotationX)*cos(rotationY);
-  let Rz = -cos(rotationX)*cos(rotationY);
+  let Rx = map(-cos(rotationZ)*sin(rotationY)-sin(rotationZ)*sin(rotationX)*cos(rotationY),-1,1,-0.5,0.5);
+  let Ry = map(-sin(rotationZ)*sin(rotationY)+cos(rotationZ)*sin(rotationX)*cos(rotationY),-1,1,-0.5,0.5);
+  let Rz =  map(-cos(rotationX)*cos(rotationY),-1,1,-0.5,0.5);
 
   return createVector(Rx,Ry,Rz);
 }
