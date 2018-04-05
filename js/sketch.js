@@ -46,6 +46,10 @@ function draw()
       text("rotVecX "+rotationVector.x,10,40);
       text("rotVecY "+rotationVector.y,10,70);
       text("rotVecZ "+rotationVector.z,10,100);
+
+      text("alpha "+rotationZ,10,140);
+      text("beta "+rotationX,10,170);
+      text("gamma "+rotationY,10,200);
     }
   }
   else
@@ -60,9 +64,14 @@ function draw()
  */
 function getWGSRotationVector()
 {
-  let Rx = map(-cos(rotationZ)*sin(rotationY)-sin(rotationZ)*sin(rotationX)*cos(rotationY),-1,1,-0.5,0.5);
-  let Ry = map(-sin(rotationZ)*sin(rotationY)+cos(rotationZ)*sin(rotationX)*cos(rotationY),-1,1,-0.5,0.5);
-  let Rz =  map(-cos(rotationX)*cos(rotationY),-1,1,-0.5,0.5);
+  let Rx = -cos(rotationZ)*sin(rotationY)-sin(rotationZ)*sin(rotationX)*cos(rotationY);
+  let Ry = -sin(rotationZ)*sin(rotationY)+cos(rotationZ)*sin(rotationX)*cos(rotationY);
+  let Rz = -cos(rotationX)*cos(rotationY);
+
+  //Remap values from -0.5 to 0.5
+  Rx = map(Rx,-1,1,-0.5,0.5);
+  Ry = map(Ry,-1,1,-0.5,0.5);
+  Rz = map(Rz,-1,1,-0.5,0.5);
 
   return createVector(Rx,Ry,Rz);
 }
