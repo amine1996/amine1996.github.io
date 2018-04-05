@@ -2,30 +2,26 @@
 var lastOrientation;
 
 //Last Y rotation
-var lastRotationY;
+var horizontalBubbleRy;
 
 //Last X rotation
-var lastRotationX;
-
-const DEBUG = true;
+var verticalBubbleRx;
 
 function setup() 
 {
   createCanvas(screen.width, screen.height);
 
-  if(deviceOrientation == LANDSCAPE)
-    resizeCanvas(screen.height, screen.width);
-
   background(255,255,255);   
   angleMode(DEGREES);
 
-  lastOrientation = deviceOrientation;
-  lastRotationY = 0; 
-  lastRotationX = 0;
+  horizontalBubbleRy = 0; 
+  verticalBubbleRx = 0;
 
   textSize(20);
-}
 
+  mo.init();
+}
+  
 function draw() 
 {
   background(255,255,255);
@@ -33,36 +29,51 @@ function draw()
   //A plat
   if(rotationY != null && rotationX != null)
   {
+    let rotationVector = getWGSRotationVector();
+
     //Horizontal bubble
-    //Not working properly
-    let deltaRotationY = sin(rotationY) - sin(lastRotationY);
-    lastRotationY += map(deltaRotationY,-2,2,-5,5)
-
     fill(0,0,255);
-    ellipse(screen.width*map(cos(lastRotationY+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
-
+    horizontalBubbleRy += (rotationVector.y - horizontalBubbleRy)/10;
+    ellipse(screen.width*(horizontalBubbleRy+1/2),screen.height/2, 80, 80);
+    
     //Vertical bubble
-    //OK
-    let deltaRotationX = sin(rotationX) - sin(lastRotationX);
-    lastRotationX += map(deltaRotationX,-2,2,-5,5)
-
     fill(255,0,0);
-    ellipse(screen.width/2, screen.height*map(cos(lastRotationX+90),-1,1,0.05,0.95), 80, 80);
+    verticalBubbleRx += (rotationVector.x - verticalBubbleRx)/10;
+    ellipse(screen.width/2, screen.height*(verticalBubbleRx+1/2), 80, 80);
 
-        
     if(DEBUG)
     {
-      fill(0,0,0);
-      text("RotationX : "+rotationX,50,40);
-      text("RotationY : "+rotationY,50,70);
-      text("RotationZ : "+rotationZ,50,100);
+      text("rotVecX "+rotationVector.x,10,40);
+      text("rotVecY "+rotationVector.y,10,70);
+      text("rotVecZ "+rotationVector.z,10,100);
 
-      text("lastRotationX : "+lastRotationX,50,140);
-      text("lastRotationY : "+lastRotationY,50,170);
+      text("alpha "+rotationZ,10,140);
+      text("beta "+rotationX,10,170);
+      text("gamma "+rotationY,10,200);
     }
   }
   else
   {
     text("No rotation found",10,30);
   }
+}
+
+/*
+ * http://wiki.cs.vsb.cz/images/archive/6/69/20160405105728!TAMZ-new-L8.pdf
+ * Page 5
+ */
+function getWGSRotationVector()
+{
+  let ori = deviceOrientation(e); 
+
+  let Rx = -cos(ori.alpha)*sin(ori.gamma)-sin(ori.alpha)*sin(ori.beta)*cos(ori.gamma);
+  let Ry = -sin(ori.alpha)*sin(ori.gamma)+cos(ori.alpha)*sin(ori.beta)*cos(ori.gamma);
+  let Rz = -cos(ori.beta)*cos(ori.gamma);
+
+  //Remap values from -0.5 to 0.5
+  Rx = map(Rx,-1,1,-0.5,0.5);
+  Ry = map(Ry,-1,1,-0.5,0.5);
+  Rz = map(Rz,-1,1,-0.5,0.5);
+
+  return createVector(Rx,Ry,Rz);
 }

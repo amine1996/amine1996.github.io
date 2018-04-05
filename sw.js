@@ -21,7 +21,11 @@ if (workbox)
   },
   {
     "url": "index.html",
-    "revision": "08c36cc18ecaee3906679950449b90ed"
+    "revision": "7855c519277f5d3ecede029860836d1a"
+  },
+  {
+    "url": "js/static/deviceapi-normaliser.js",
+    "revision": "62800a96ff674e024be2085843286604"
   },
   {
     "url": "js/static/fulltilt.min.js",
