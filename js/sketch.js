@@ -2,26 +2,20 @@
 var lastOrientation;
 
 //Last Y rotation
-var horizontalBubbleAngle;
+var horizontalBubbleRy;
 
 //Last X rotation
-var verticalBubbleAngle;
-
-const DEBUG = true;
+var verticalBubbleRx;
 
 function setup() 
 {
   createCanvas(screen.width, screen.height);
 
-  if(deviceOrientation == LANDSCAPE)
-    resizeCanvas(screen.height, screen.width);
-
   background(255,255,255);   
   angleMode(DEGREES);
 
-  lastOrientation = deviceOrientation;
-  horizontalBubbleAngle = 0; 
-  verticalBubbleAngle = 0;
+  horizontalBubbleRy = 0; 
+  verticalBubbleRx = 0;
 
   textSize(20);
 }
@@ -37,11 +31,13 @@ function draw()
 
     //Horizontal bubble
     fill(0,0,255);
-    ellipse(screen.width*(rotationVector.y+1/2),screen.height/2, 80, 80);
+    horizontalBubbleRy += rotationVector.y - horizontalBubbleRy;
+    ellipse(screen.width*(horizontalBubbleRy.y+1/2),screen.height/2, 80, 80);
     
     //Vertical bubble
     fill(255,0,0);
-    ellipse(screen.width/2, screen.height*(rotationVector.x+1/2), 80, 80);
+    verticalBubbleRx += rotationVector.x - verticalBubbleRx;
+    ellipse(screen.width/2, screen.height*(verticalBubbleRx.x+1/2), 80, 80);
   }
   else
   {
