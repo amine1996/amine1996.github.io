@@ -22,6 +22,8 @@ function setup()
   textSize(20);
 
   window.addEventListener("deviceorientation", update_gyro, false);
+
+  mo.init();
 }
   
 function draw() 
