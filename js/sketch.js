@@ -84,7 +84,7 @@ function bonjourcava()
 {
   var vector = createVector(0,0,0);
 
-  promise.then(
+  vector = promise.then(
     function(test) 
     {
       var euler = test.getScreenAdjustedEuler();
@@ -100,14 +100,14 @@ function bonjourcava()
       Ry = map(Ry,-1,1,-0.5,0.5);
       Rz = map(Rz,-1,1,-0.5,0.5);
     
-      vector = createVector(Rx,Ry,Rz);
+      return createVector(Rx,Ry,Rz);
     }
   ).catch(
     function(message)
     {
       console.log("test");
-      
-      vector = createVector(0,0,0);
+
+      return createVector(0,0,0);
     }
   );
 
