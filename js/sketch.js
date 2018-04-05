@@ -7,6 +7,8 @@ var horizontalBubbleRy;
 //Last X rotation
 var verticalBubbleRx;
 
+const DEBUG = true;
+
 function setup() 
 {
   createCanvas(screen.width, screen.height);
@@ -38,6 +40,13 @@ function draw()
     fill(255,0,0);
     verticalBubbleRx += (rotationVector.x - verticalBubbleRx)/10;
     ellipse(screen.width/2, screen.height*(verticalBubbleRx+1/2), 80, 80);
+
+    if(DEBUG)
+    {
+      text("rotVecX "+rotationVector.x,10,40);
+      text("rotVecY "+rotationVector.y,10,70);
+      text("rotVecZ "+rotationVector.z,10,100);
+    }
   }
   else
   {
