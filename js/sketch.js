@@ -36,8 +36,15 @@ function draw()
     //Horizontal bubble
     //Not working properly
 
-    let deltaRotationY = cos(rotationY) - sin(horizontalBubbleAngle);
+    if(DeviceRotationRate)
+    let deltaRotationY = cos(rotationY) - cos(horizontalBubbleAngle);
     horizontalBubbleAngle += map(deltaRotationY,-2,2,-5,5)
+
+    let a = -cos(rotationZ)*sin(rotationY)-sin(rotationZ)*sin(rotationX)*cos(rotationY);
+    let b = -sin(rotationZ)*sin(rotationY)+cos(rotationZ)*sin(rotationX)*cos(rotationY);
+    let c = -cos(rotationX)*cos(rotationY);
+
+
 
     fill(0,0,255);
     ellipse(screen.width*map(cos(horizontalBubbleAngle+90),-1,1,0.05,0.95),screen.height/2, 80, 80);
@@ -53,9 +60,9 @@ function draw()
     if(DEBUG)
     {
       fill(0,0,0);
-      text("RotationX : "+rotationX,50,40);
-      text("RotationY : "+rotationY,50,70);
-      text("RotationZ : "+rotationZ,50,100);
+      text("RotationX : "+a,50,40);
+      text("RotationY : "+b,50,70);
+      text("RotationZ : "+c,50,100);
 
       text("verticalBubbleAngle (RotationX) : "+verticalBubbleAngle,50,140);
       text("horizontalBubbleAngle (RotationY) : "+horizontalBubbleAngle,50,170);
