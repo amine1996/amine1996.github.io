@@ -7,6 +7,8 @@ var horizontalBubbleRy;
 //Last X rotation
 var verticalBubbleRx;
 
+var promise;
+
 const DEBUG = true;
 
 function setup() 
@@ -20,6 +22,8 @@ function setup()
   verticalBubbleRx = 0;
 
   textSize(20);
+
+  promise = FULLTILT.getDeviceOrientation({'type': 'world'});
 }
 
 function draw() 
@@ -43,6 +47,26 @@ function draw()
 
     if(DEBUG)
     {
+      promise
+      .then(
+        function(deviceOrientation) {
+          var quaternion = deviceOrientation.getScreenAdjustedQuaternion();
+          var matrix = deviceOrientation.getScreenAdjustedMatrix();
+          var euler = deviceOrientation.getScreenAdjustedEuler();
+     
+          // Do something with our quaternion, matrix, euler objects... 
+          console.debug(quaternion);
+          console.debug(matrix);
+          console.debug(euler);
+        }
+      ).catch(
+        function(message) {
+          // Device Orientation Events are not supported
+      
+          // Implement manual fallback controls instead...
+        }
+      );
+
       text("rotVecX "+rotationVector.x,10,40);
       text("rotVecY "+rotationVector.y,10,70);
       text("rotVecZ "+rotationVector.z,10,100);
