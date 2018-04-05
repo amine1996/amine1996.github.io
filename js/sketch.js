@@ -82,6 +82,8 @@ function getWGSRotationVector()
 
 function test()
 {
+  var vector;
+
   promise.then(
     function(test) 
     {
@@ -96,14 +98,14 @@ function test()
       Ry = map(Ry,-1,1,-0.5,0.5);
       Rz = map(Rz,-1,1,-0.5,0.5);
     
-      return createVector(Rx,Ry,Rz);
+      vector = createVector(Rx,Ry,Rz);
     }
   ).catch(
     function(message) 
     {
-      return createVector(0,0,0);
+      vector = createVector(0,0,0);
     }
   );
 
-
+  return vector;
 }
