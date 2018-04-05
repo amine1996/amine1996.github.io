@@ -9,7 +9,7 @@ var verticalBubbleAngle;
 
 const DEBUG = true;
 
-var color = 255;
+var test = 255;
 
 function setup() 
 {
@@ -30,7 +30,7 @@ function setup()
 
 function draw() 
 {
-  background(255,255,color);
+  background(255,255,test);
 
   //A plat
   if(rotationY != null && rotationX != null)
@@ -92,13 +92,13 @@ function deviceTurned()
 {
   if (turnAxis == 'Y')
   {
-    if (color == 0)
+    if (test == 0)
     {
-      color = 255
+      test = 255
     } 
-    else if (color == 255) 
+    else if (test == 255) 
     {
-        color = 0;
+      test = 0;
     }
   }
 }
