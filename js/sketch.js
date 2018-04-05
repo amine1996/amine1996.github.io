@@ -7,6 +7,8 @@ var horizontalBubbleRy;
 //Last X rotation
 var verticalBubbleRx;
 
+var current_orientation;
+
 function setup() 
 {
   createCanvas(screen.width, screen.height);
