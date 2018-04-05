@@ -23,7 +23,7 @@ function setup()
 
   textSize(20);
 
-  promise = new FULLTILT.getDeviceOrientation({'type': 'world'});
+  promise = new FULLTILT.getDeviceOrientation();
 }
 
 function draw() 
@@ -33,7 +33,7 @@ function draw()
   //A plat
   if(rotationY != null && rotationX != null)
   {
-    rotationVector = getWGSRotationVector();
+    rotationVector = test();
 
     //Horizontal bubble
     fill(0,0,255);
@@ -47,26 +47,6 @@ function draw()
 
     if(DEBUG)
     {
-      promise
-      .then(
-        function(test) {
-          var quaternion = test.getScreenAdjustedQuaternion();
-          var matrix = test.getScreenAdjustedMatrix();
-          var euler = test.getScreenAdjustedEuler();
-     
-          // Do something with our quaternion, matrix, euler objects... 
-          console.log(quaternion);
-          console.log(matrix);
-          console.log(euler);
-        }
-      ).catch(
-        function(message) {
-          // Device Orientation Events are not supported
-      
-          // Implement manual fallback controls instead...
-        }
-      );
-
       text("rotVecX "+rotationVector.x,10,40);
       text("rotVecY "+rotationVector.y,10,70);
       text("rotVecZ "+rotationVector.z,10,100);
@@ -91,6 +71,34 @@ function getWGSRotationVector()
   let Rx = -cos(rotationZ)*sin(rotationY)-sin(rotationZ)*sin(rotationX)*cos(rotationY);
   let Ry = -sin(rotationZ)*sin(rotationY)+cos(rotationZ)*sin(rotationX)*cos(rotationY);
   let Rz = -cos(rotationX)*cos(rotationY);
+
+  //Remap values from -0.5 to 0.5
+  Rx = map(Rx,-1,1,-0.5,0.5);
+  Ry = map(Ry,-1,1,-0.5,0.5);
+  Rz = map(Rz,-1,1,-0.5,0.5);
+
+  return createVector(Rx,Ry,Rz);
+}
+
+function test()
+{
+  promise.then(
+    function(test) 
+    {
+      var euler = test.getScreenAdjustedEuler();
+    }
+  ).catch(
+    function(message) 
+    {
+      // Device Orientation Events are not supported
+  
+      // Implement manual fallback controls instead...
+    }
+  );
+
+  let Rx = -cos(euler.alpha)*sin(euler.gamma)-sin(euler.alpha)*sin(euler.beta)*cos(euler.gamma);
+  let Ry = -sin(euler.alpha)*sin(euler.gamma)+cos(euler.alpha)*sin(euler.beta)*cos(euler.gamma);
+  let Rz = -cos(euler.beta)*cos(euler.gamma);
 
   //Remap values from -0.5 to 0.5
   Rx = map(Rx,-1,1,-0.5,0.5);
