@@ -37,12 +37,12 @@ function draw()
     //Not working properly
 
 
-    if(abs(pRotationY - rotationY) > 90)
+    /*if(abs(pRotationY - rotationY) > 90)
     {
       horizontalBubbleAngle = rotationY;
-    }
+    }*/
 
-    let deltaRotationY = cos(rotationY) - cos(horizontalBubbleAngle);
+    let deltaRotationY = sin(rotationY) - sin(horizontalBubbleAngle);
     horizontalBubbleAngle += map(deltaRotationY,-2,2,-5,5)
 
     fill(0,0,255);
