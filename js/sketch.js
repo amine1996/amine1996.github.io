@@ -36,7 +36,6 @@ function draw()
     //Horizontal bubble
     //Not working properly
 
-    if(DeviceRotationRate)
     let deltaRotationY = cos(rotationY) - cos(horizontalBubbleAngle);
     horizontalBubbleAngle += map(deltaRotationY,-2,2,-5,5)
 
