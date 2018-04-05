@@ -9,8 +9,6 @@ var verticalBubbleAngle;
 
 const DEBUG = true;
 
-var test = 255;
-
 function setup() 
 {
   createCanvas(screen.width, screen.height);
@@ -30,7 +28,7 @@ function setup()
 
 function draw() 
 {
-  background(255,255,test);
+  background(255,255,255);
 
   //A plat
   if(rotationY != null && rotationX != null)
@@ -38,13 +36,7 @@ function draw()
     //Horizontal bubble
     //Not working properly
 
-
-    /*if(abs(pRotationY - rotationY) > 90)
-    {
-      horizontalBubbleAngle = rotationY;
-    }*/
-
-    let deltaRotationY = sin(rotationY) - sin(horizontalBubbleAngle);
+    let deltaRotationY = sin(abs(rotationY)) - sin(horizontalBubbleAngle);
     horizontalBubbleAngle += map(deltaRotationY,-2,2,-5,5)
 
     fill(0,0,255);
@@ -85,20 +77,5 @@ function resizeOnOrientationChange()
       resizeCanvas(screen.width,screen.height);
 
     lastOrientation = deviceOrientation;
-  }
-}
-
-function deviceTurned() 
-{
-  if (turnAxis == 'Y')
-  {
-    if (test == 0)
-    {
-      test = 255
-    } 
-    else if (test == 255) 
-    {
-      test = 0;
-    }
   }
 }
