@@ -38,7 +38,7 @@ function draw()
     let deltaRotationY = 0;//cos(rotationY) - cos(lastRotationY);
     if(rotationY < 0)
     {
-      deltaRotationY = cos(-1 * (rotationY +90)) - cos(lastRotationY)
+      deltaRotationY = -cos(rotationY) - cos(lastRotationY)
       lastRotationY += map(deltaRotationY,-2,2,-5,5)
     }
     else
