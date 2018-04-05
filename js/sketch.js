@@ -106,6 +106,7 @@ function bonjourcava()
     function(message)
     {
       console.log("test");
+      
       vector = createVector(0,0,0);
     }
   );
