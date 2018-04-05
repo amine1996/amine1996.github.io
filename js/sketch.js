@@ -64,7 +64,7 @@ function draw()
  */
 function getWGSRotationVector()
 {
-  let ori = deviceOrientation(e); 
+  let ori = current_orientation; 
 
   let Rx = -cos(ori.alpha)*sin(ori.gamma)-sin(ori.alpha)*sin(ori.beta)*cos(ori.gamma);
   let Ry = -sin(ori.alpha)*sin(ori.gamma)+cos(ori.alpha)*sin(ori.beta)*cos(ori.gamma);
