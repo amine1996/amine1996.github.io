@@ -31,12 +31,12 @@ function draw()
 
     //Horizontal bubble
     fill(0,0,255);
-    horizontalBubbleRy += constrain((rotationVector.y - horizontalBubbleRy)/5,0.05,0.1);
+    horizontalBubbleRy += (rotationVector.y - horizontalBubbleRy)/5;
     ellipse(screen.width*(horizontalBubbleRy+1/2),screen.height/2, 80, 80);
     
     //Vertical bubble
     fill(255,0,0);
-    verticalBubbleRx += constrain((rotationVector.x - verticalBubbleRx)/5,0.05,0.1);
+    verticalBubbleRx += (rotationVector.x - verticalBubbleRx)/5;
     ellipse(screen.width/2, screen.height*(verticalBubbleRx+1/2), 80, 80);
   }
   else
