@@ -18,6 +18,8 @@ function setup()
   verticalBubbleRx = 0;
 
   textSize(20);
+
+  window.addEventListener("deviceorientation", update_gyro, false);
 }
   
 function draw() 
@@ -74,4 +76,9 @@ function getWGSRotationVector()
   Rz = map(Rz,-1,1,-0.5,0.5);
 
   return createVector(Rx,Ry,Rz);
+}
+
+function update_gyro(e) 
+{
+  current_orientation = deviceOrientation(e); 
 }
