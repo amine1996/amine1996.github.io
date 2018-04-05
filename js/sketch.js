@@ -57,9 +57,6 @@ function draw()
 
     fill(255,0,0);
     ellipse(screen.width/2, screen.height*map(cos(verticalBubbleAngle+90),-1,1,0.05,0.95), 80, 80);
-
-    text(turnAxis,)
-
         
     if(DEBUG)
     {
