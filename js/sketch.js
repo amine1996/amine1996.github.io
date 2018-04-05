@@ -33,7 +33,7 @@ function draw()
   //A plat
   if(rotationY != null && rotationX != null)
   {
-    rotationVector = test();
+    let rotationVector = bonjourcava();
 
     //Horizontal bubble
     fill(0,0,255);
@@ -80,9 +80,9 @@ function getWGSRotationVector()
   return createVector(Rx,Ry,Rz);
 }
 
-function test()
+function bonjourcava()
 {
-  var vector;
+  var vector = createVector(0,0,0);
 
   promise.then(
     function(test) 
@@ -107,5 +107,5 @@ function test()
     }
   );
 
-  return vector;
+  return vector;  
 }
