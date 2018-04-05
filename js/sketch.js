@@ -90,7 +90,7 @@ function bonjourcava()
       var euler = test.getScreenAdjustedEuler();
 
       console.log(euler);
-      
+
       let Rx = -cos(euler.alpha)*sin(euler.gamma)-sin(euler.alpha)*sin(euler.beta)*cos(euler.gamma);
       let Ry = -sin(euler.alpha)*sin(euler.gamma)+cos(euler.alpha)*sin(euler.beta)*cos(euler.gamma);
       let Rz = -cos(euler.beta)*cos(euler.gamma);
@@ -103,8 +103,9 @@ function bonjourcava()
       vector = createVector(Rx,Ry,Rz);
     }
   ).catch(
-    function(message) 
+    function(message)
     {
+      console.log("test");
       vector = createVector(0,0,0);
     }
   );
