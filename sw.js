@@ -21,7 +21,7 @@ if (workbox)
   },
   {
     "url": "index.html",
-    "revision": "46c4555d41c832d54e9c8bf7cac58d34"
+    "revision": "08c36cc18ecaee3906679950449b90ed"
   },
   {
     "url": "js/static/deviceapi-normaliser.js",
