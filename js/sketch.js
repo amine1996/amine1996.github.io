@@ -49,10 +49,10 @@ function draw()
     {
       promise
       .then(
-        function(deviceOrientation) {
-          var quaternion = deviceOrientation.getScreenAdjustedQuaternion();
-          var matrix = deviceOrientation.getScreenAdjustedMatrix();
-          var euler = deviceOrientation.getScreenAdjustedEuler();
+        function(test) {
+          var quaternion = test.getScreenAdjustedQuaternion();
+          var matrix = test.getScreenAdjustedMatrix();
+          var euler = test.getScreenAdjustedEuler();
      
           // Do something with our quaternion, matrix, euler objects... 
           console.log(quaternion);
