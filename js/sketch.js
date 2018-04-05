@@ -11,6 +11,8 @@ var promise;
 
 const DEBUG = true;
 
+var vector;
+
 function setup() 
 {
   createCanvas(screen.width, screen.height);
@@ -82,9 +84,9 @@ function getWGSRotationVector()
 
 function bonjourcava()
 {
-  var vector = createVector(0,0,0);
+  vector = createVector(0,0,0);
 
-  vector = promise.then(
+  promise.then(
     function(test) 
     {
       var euler = test.getScreenAdjustedEuler();
@@ -100,14 +102,14 @@ function bonjourcava()
       Ry = map(Ry,-1,1,-0.5,0.5);
       Rz = map(Rz,-1,1,-0.5,0.5);
     
-      return createVector(Rx,Ry,Rz);
+      vector = createVector(Rx,Ry,Rz);
     }
   ).catch(
     function(message)
     {
       console.log("test");
 
-      return createVector(0,0,0);
+      vector = createVector(0,0,0);
     }
   );
 
