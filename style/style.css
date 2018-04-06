@@ -1,0 +1,26 @@
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto','Helvetica','Arial',sans-serif;
+    justify-content: space-between;
+    margin: 0;
+    max-width: 100%;
+    min-height: 100vh;
+    text-align: center;
+  }
+
+@media (min-width: 800px) {
+    .column {
+       width: calc(50% - 20px);
+    }
+  
+    .left {
+      padding-right: 10px;
+    }
+  
+    .right {
+      padding-left: 10px;
+    }
+  
+  }

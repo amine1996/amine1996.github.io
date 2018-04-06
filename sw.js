@@ -29,7 +29,7 @@ if (workbox)
   },
   {
     "url": "index.html",
-    "revision": "bfdd45bec0f4a15d10dfffc82a07e302"
+    "revision": "e0fd92902ed696f4132f2b1ad82745e5"
   },
   {
     "url": "js/static/p5.min.js",
@@ -116,8 +116,8 @@ if (workbox)
     "revision": "7100dd3f1f49ad1594e03347f78f0960"
   },
   {
-    "url": "style/main.css",
-    "revision": "628320e3f89c25f36472cda3e970e57d"
+    "url": "style/style.css",
+    "revision": "b2c1dd84e7048473d1ba17e85b3837aa"
   }
 ]);
 
