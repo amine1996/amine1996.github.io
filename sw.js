@@ -13,23 +13,23 @@ if (workbox)
   },
   {
     "url": "images/icon/icon.png",
-    "revision": "d2bc415466561c6cdace675c530743c0"
+    "revision": "aaccfd4e0fa161adb4ffba6c3d422c89"
   },
   {
     "url": "images/icon/pwa-192x192.png",
-    "revision": "6410df2a6c5639ae308e9c5547d1bb13"
+    "revision": "0833f29c4010912c4b951b43915618b0"
   },
   {
     "url": "images/icon/pwa-512x512.png",
-    "revision": "39abd15879857661e9511087b0b5d54f"
+    "revision": "82982c40c03c0370d838829fc6ec469b"
+  },
+  {
+    "url": "images/spirit_level.png",
+    "revision": "3b297e5d3b8fc4e77c6a5cc5a6e2a5f2"
   },
   {
     "url": "index.html",
-    "revision": "08c36cc18ecaee3906679950449b90ed"
-  },
-  {
-    "url": "js/static/deviceapi-normaliser.js",
-    "revision": "62800a96ff674e024be2085843286604"
+    "revision": "bfdd45bec0f4a15d10dfffc82a07e302"
   },
   {
     "url": "js/static/p5.min.js",
@@ -113,7 +113,7 @@ if (workbox)
   },
   {
     "url": "manifest.json",
-    "revision": "649beefd59f6dd4c8545dc10badde1c6"
+    "revision": "7100dd3f1f49ad1594e03347f78f0960"
   },
   {
     "url": "style/main.css",

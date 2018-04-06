@@ -1,6 +1,6 @@
 {
-  "short_name": "Short Name",
-  "name": "Full Name",
+  "short_name": "MSL",
+  "name": "Minimal Spirit Level",
   "display": "fullscreen",
   "orientation" : "portrait",
   "background_color": "#FFFFFF",
